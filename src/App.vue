@@ -32,6 +32,10 @@ import { RouterLink, RouterView } from 'vue-router'
   border: 1px solid rgba(249, 247, 243, 0.78);
 }
 
+.link {
+  color: var(--text-red) !important;
+}
+
 .background {
   background: linear-gradient(
     var(--main-light) 15%, 
@@ -43,6 +47,22 @@ import { RouterLink, RouterView } from 'vue-router'
   font-family: 'Amatic SC', cursive;
   color: var(--text-blue);
   font-weight: 550;
+}
+
+.spinning {
+  animation-name: spin;
+  animation-duration: 1300ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 
 </style>

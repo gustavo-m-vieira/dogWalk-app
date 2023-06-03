@@ -1,8 +1,13 @@
+<script src="./signup.js"></script>
 <template>
   <div class="fullscreen">
     <div class="modal glass">
 
       <h1 class="text-main modal-title">Create a DogWalk account</h1>
+
+      <p class="warning">
+        {{warning}}
+      </p>
 
       <div class="input-row">
         <label for="first-name" class="text-main input-label"> First Name: </label>
@@ -19,7 +24,25 @@
         <input id="email" class="input-field" v-model="email" placeholder="" />
       </div>
 
-      <button class="button text-main">Sign me up!</button>
+      <div class="input-row">
+        <label for="password" type="password" class="text-main input-label"> Password: </label>
+        <input type="password" id="password" class="input-field" v-model="password" placeholder="" />
+      </div>
+
+      <div class="input-row">
+        <label for="password-repeat" class="text-main input-label"> Repeat Password: </label>
+        <input type="password" id="password-repeat" class="input-field" v-model="passwordRepeat" placeholder="" />
+      </div>
+
+      <button class="button text-main" v-on:click="clicked">
+        <span class="material-symbols-outlined spinning" v-if="loading">cached</span>
+        <p v-else>Sign me up!</p>
+      </button>
+
+      <p class="text-main login-redirect">Already have an account? Click to 
+        <RouterLink class="link" to="/login">here</RouterLink>
+        login.</p>
+
     </div>
   </div>
 </template>
@@ -28,7 +51,7 @@
 
 .modal {
   /* background-color: var(--modal-bg-color-light); */
-  width: 80%;
+  width: 90%;
   padding: 5%;
   border-radius: 5px;
   display: flex;
@@ -39,10 +62,20 @@
   padding-bottom: 30px;
 }
 
+.warning {
+  color: var(--text-red) !important;
+  padding-bottom: 1vh;
+}
+
 .input-row {
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
+}
+
+.login-redirect {
+  padding-top: 1vh;
+  padding-inline: 1vw;
 }
 
 .input-label {
@@ -50,7 +83,7 @@
 }
 
 .input-field {
-  width: 70%;
+  width: 60%;
   border-color: var(--accent-light);
   border:0;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
