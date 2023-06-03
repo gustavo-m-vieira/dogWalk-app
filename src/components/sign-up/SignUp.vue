@@ -58,6 +58,12 @@
   flex-direction: column;
 }
 
+@media only screen and (min-width: 600px) {
+  .modal {
+    width: 60%;
+  }
+}
+
 .modal-title {
   padding-bottom: 30px;
 }

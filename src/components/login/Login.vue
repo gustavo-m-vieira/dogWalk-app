@@ -41,6 +41,13 @@
   flex-direction: column;
 }
 
+@media only screen and (min-width: 600px) {
+  .modal {
+    width: 60%;
+  }
+}
+
+
 .warning {
   color: var(--text-red) !important;
   padding-bottom: 1vh;
