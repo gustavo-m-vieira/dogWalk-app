@@ -6,17 +6,17 @@ const router = createRouter({
     {
       path: '/',
       name: 'landing-page',
-      component: () => import('../views/SignUp.vue')
+      component: () => import('../components/Login.vue')
     },
     {
       path: '/sign-up',
       name: 'sign-up',
-      component: () => import('../views/SignUp.vue')
+      component: () => import('../components/sign-up/SignUp.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/Login.vue')
+      component: () => import('../components/Login.vue')
     }
   ]
 })
