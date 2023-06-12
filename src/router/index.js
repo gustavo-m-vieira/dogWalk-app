@@ -21,7 +21,12 @@ const router = createRouter({
     {
       path: '/pet-register',
       name: 'pet-register',
-      component: () => import('../components/pet-register/petRegister.vue')
+      component: () => import('../components/pet-register/PetRegister.vue')
+    },
+    {
+      path: '/walker-trip',
+      name: 'create-trip',
+      component: () => import('../components/create-trip/CreateTrip.vue')
     }
   ]
 })

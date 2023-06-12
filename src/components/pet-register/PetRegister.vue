@@ -46,11 +46,6 @@
        </select>
       </div>
 
-      <div class="input-row">
-        <label for="tutor" class="text-main input-label"> Tutor: </label>
-        <input id="tutor" class="input-field" v-model="Tutor" placeholder="" />
-      </div>
-
       <button class="button text-main" v-on:click="clicked">
         <span class="material-symbols-outlined spinning" v-if="loading">cached</span>
         <p v-else>Add Dog</p>
