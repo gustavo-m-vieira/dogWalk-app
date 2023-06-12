@@ -2,12 +2,11 @@ export default {
 
     data() {
       return {
-        name: "",
-        breed: "",
-        size: "",
-        birthDate: "",
-        temperament: "",
-        tutor: "",
+        startDate: "",
+        duration: "60",
+        dogWalker: "",
+        slots: "5",
+        dogType: "",
         warning: null,
         loading: false
       }
@@ -16,7 +15,7 @@ export default {
     methods: {
       clicked() {
         this.loading = true;
-        console.log(`dog name is${this.name}`)
+        console.log(`duration is ${this.duration}`)
       }
     },
   }
