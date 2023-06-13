@@ -27,6 +27,11 @@ const router = createRouter({
       path: '/walker-trip',
       name: 'create-trip',
       component: () => import('../components/create-trip/CreateTrip.vue')
+    },
+    {
+      path: '/tutor-page',
+      name: 'tutor-page',
+      component: () => import('../components/tutor-page/TutorPage.vue')
     }
   ]
 })
