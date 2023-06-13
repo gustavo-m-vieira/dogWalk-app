@@ -3,34 +3,39 @@
 <template>
   <div class="fullscreen">
     <div class="modal glass">
-
       <h1 class="text-main modal-title">Welcome to the tutors page</h1>
 
       <p class="warning">
-        {{warning}}
+        {{ warning }}
       </p>
 
-      <button class="button text-main" v-on:click="clicked">
-        <span class="material-symbols-outlined spinning" v-if="loading">cached</span>
-        <p v-else>Register Pet</p>
-      </button>
+      <div class="buttons-container">
+        <button class="button text-button" v-on:click="clicked">
+          <span class="material-symbols-outlined spinning" v-if="loading"
+            >cached</span
+          >
+          <p v-else>Register Pet</p>
+        </button>
 
-      <button class="button text-main" v-on:click="clicked">
-        <span class="material-symbols-outlined spinning" v-if="loading">cached</span>
-        <p v-else>Schedule Trip</p>
-      </button>
+        <button class="button text-button" v-on:click="clicked">
+          <span class="material-symbols-outlined spinning" v-if="loading"
+            >cached</span
+          >
+          <p v-else>Schedule Trip</p>
+        </button>
 
-      <button class="button text-main" v-on:click="clicked">
-        <span class="material-symbols-outlined spinning" v-if="loading">cached</span>
-        <p v-else>Trip list</p>
-      </button>
-
+        <button class="button text-button" v-on:click="clicked">
+          <span class="material-symbols-outlined spinning" v-if="loading"
+            >cached</span
+          >
+          <p v-else>Trip list</p>
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
-
 .modal {
   /* background-color: var(--modal-bg-color-light); */
   width: 90%;
@@ -66,18 +71,14 @@
   padding-inline: 1vw;
 }
 
-.input-label {
-  font-size: 20px;
-}
-
 .input-field {
   width: 60%;
   border-color: var(--accent-light);
-  border:0;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-button {
+.button {
   background: var(--accent-dark);
   border-radius: 6px;
   color: var(--white) !important;
@@ -88,6 +89,28 @@ button {
   box-shadow: none;
   margin-top: 1vh;
   font-size: 3vh;
+  /* display: flex; */
+  width: 29%;
+  height: 130px;
+  margin: 1%;
+  flex-grow: 2;
+  text-align: center;
 }
 
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  flex-grow: 2;
+  flex-wrap: wrap;
+}
+
+.text-button {
+  font-family: "Amatic SC", cursive;
+  color: var(--text-blue);
+  font-weight: 550;
+  text-align: center;
+  font-size: 200%;
+}
 </style>
