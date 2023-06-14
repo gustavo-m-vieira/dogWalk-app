@@ -63,6 +63,18 @@
         />
       </div>
 
+      <div class="input-row">
+        <label for="is-walker" class="text-main input-label">
+          Is this a Walker account?
+        </label>
+        <input
+          type="checkbox"
+          id="is-walker"
+          class="input-check"
+          v-model="isWalker"
+        />
+      </div>
+
       <button class="button text-main" v-on:click="clicked">
         <span class="material-symbols-outlined spinning" v-if="loading"
           >cached</span
@@ -120,6 +132,10 @@
   border-color: var(--accent-light);
   border: 0;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.input-check {
+  width: 4vh;
 }
 
 button {

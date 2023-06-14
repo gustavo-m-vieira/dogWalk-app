@@ -8,6 +8,7 @@ export default {
             password: "",
             passwordRepeat: "",
             warning: null,
+            isWalker: true,
             loading: false
         }
     },

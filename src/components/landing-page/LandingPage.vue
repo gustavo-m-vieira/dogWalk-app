@@ -46,7 +46,7 @@
 
 .login-or-sign-up {
   position: absolute;
-  font-size: 2vh;
+  font-size: 2.9vh;
   top: 55vh;
 }
 
