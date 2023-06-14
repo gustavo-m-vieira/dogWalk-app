@@ -2,21 +2,34 @@
 <template>
   <div class="fullscreen">
     <div class="modal glass">
-
       <h1 class="text-main modal-title">Create a DogWalk account</h1>
 
       <p class="warning">
-        {{warning}}
+        {{ warning }}
       </p>
 
       <div class="input-row">
-        <label for="first-name" class="text-main input-label"> First Name: </label>
-        <input id="first-name" class="input-field" v-model="firstName" placeholder="" />
+        <label for="first-name" class="text-main input-label">
+          First Name:
+        </label>
+        <input
+          id="first-name"
+          class="input-field"
+          v-model="firstName"
+          placeholder=""
+        />
       </div>
 
       <div class="input-row">
-        <label for="last-name" class="text-main input-label"> Last Name: </label>
-        <input id="last-name" class="input-field" v-model="lastName" placeholder="" />
+        <label for="last-name" class="text-main input-label">
+          Last Name:
+        </label>
+        <input
+          id="last-name"
+          class="input-field"
+          v-model="lastName"
+          placeholder=""
+        />
       </div>
 
       <div class="input-row">
@@ -25,30 +38,48 @@
       </div>
 
       <div class="input-row">
-        <label for="password" type="password" class="text-main input-label"> Password: </label>
-        <input type="password" id="password" class="input-field" v-model="password" placeholder="" />
+        <label for="password" type="password" class="text-main input-label">
+          Password:
+        </label>
+        <input
+          type="password"
+          id="password"
+          class="input-field"
+          v-model="password"
+          placeholder=""
+        />
       </div>
 
       <div class="input-row">
-        <label for="password-repeat" class="text-main input-label"> Repeat Password: </label>
-        <input type="password" id="password-repeat" class="input-field" v-model="passwordRepeat" placeholder="" />
+        <label for="password-repeat" class="text-main input-label">
+          Repeat Password:
+        </label>
+        <input
+          type="password"
+          id="password-repeat"
+          class="input-field"
+          v-model="passwordRepeat"
+          placeholder=""
+        />
       </div>
 
       <button class="button text-main" v-on:click="clicked">
-        <span class="material-symbols-outlined spinning" v-if="loading">cached</span>
+        <span class="material-symbols-outlined spinning" v-if="loading"
+          >cached</span
+        >
         <p v-else>Sign me up!</p>
       </button>
 
-      <p class="text-main login-redirect">Already have an account? Click to 
+      <p class="text-main login-redirect">
+        Already have an account? Click to
         <RouterLink class="link" to="/login">here</RouterLink>
-        login.</p>
-
+        login.
+      </p>
     </div>
   </div>
 </template>
 
 <style>
-
 .modal {
   /* background-color: var(--modal-bg-color-light); */
   width: 90%;
@@ -84,15 +115,11 @@
   padding-inline: 1vw;
 }
 
-.input-label {
-  font-size: 20px;
-}
-
 .input-field {
   width: 60%;
   border-color: var(--accent-light);
-  border:0;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 button {
@@ -107,5 +134,4 @@ button {
   margin-top: 1vh;
   font-size: 3vh;
 }
-
 </style>
