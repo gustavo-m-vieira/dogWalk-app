@@ -7,7 +7,11 @@ import { RouterLink, RouterView } from 'vue-router'
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
-  <RouterView class="background"/>
+  
+  <div id="app-structure" class="background">
+    <RouterView/>
+    <NavBar></NavBar>
+  </div>
 </template>
 
 <style>
@@ -20,6 +24,12 @@ import { RouterLink, RouterView } from 'vue-router'
   --white: #F9F7F3;
   --text-blue: #1038B2;
   --text-red: #D4452F;
+}
+
+#app-structure {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .glass {
