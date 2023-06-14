@@ -3,17 +3,16 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
-    rel="stylesheet"
-  />
-  <RouterView class="background" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  
+  <div id="app-structure" class="background">
+    <RouterView/>
+    <NavBar></NavBar>
+  </div>
+
 </template>
 
 <style>
@@ -26,6 +25,12 @@ import { RouterView } from "vue-router";
   --white: #f9f7f3;
   --text-blue: #1038b2;
   --text-red: #d4452f;
+}
+
+#app-structure {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .glass {
