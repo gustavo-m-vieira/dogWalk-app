@@ -2,11 +2,10 @@
 <template>
   <div class="fullscreen">
     <div class="modal glass">
-      
       <h1 class="text-main modal-title">Welcome back, please login</h1>
 
       <p class="warning">
-        {{warning}}
+        {{ warning }}
       </p>
 
       <div class="input-row">
@@ -16,22 +15,30 @@
 
       <div class="input-row">
         <label for="password" class="text-main input-label"> Password: </label>
-        <input id="password" class="input-field" v-model="password" placeholder="" />
+        <input
+          id="password"
+          class="input-field"
+          v-model="password"
+          placeholder=""
+        />
       </div>
-      
+
       <button class="button text-main" v-on:click="clicked">
-        <span class="material-symbols-outlined spinning" v-if="loading">cached</span>
+        <span class="material-symbols-outlined spinning" v-if="loading"
+          >cached</span
+        >
         <p v-else>Login</p>
       </button>
 
-      <p class="text-main login-redirect">Need an account? Click to 
+      <p class="text-main login-redirect">
+        Need an account? Click to
         <RouterLink class="link" to="/sign-up">here</RouterLink>
-        sign up.</p>
+        sign up.
+      </p>
     </div>
   </div>
 </template>
 <style>
-
 .modal {
   /* background-color: var(--modal-bg-color-light); */
   width: 80%;
@@ -46,7 +53,6 @@
     width: 60%;
   }
 }
-
 
 .warning {
   color: var(--text-red) !important;
@@ -63,15 +69,11 @@
   padding-bottom: 15px;
 }
 
-.input-label {
-  font-size: 20px;
-}
-
 .input-field {
   width: 70%;
   border-color: var(--accent-light);
-  border:0;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 button {
@@ -89,5 +91,4 @@ button {
   justify-content: center;
   align-items: center;
 }
-
 </style>

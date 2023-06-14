@@ -1,13 +1,16 @@
 <template>
   <div class="fullscreen">
     <div class="logo-row">
-      <h1 class="text-main logo-text"> DogWalk </h1>
+      <h1 class="text-main logo-text">DogWalk</h1>
       <span class="material-symbols-outlined logo">pets</span>
     </div>
 
+
     <p class="text-main login-or-sign-up">Please, either
       <RouterLink class="link" to="/login">login</RouterLink>
+      
       or
+      
       <RouterLink class="link" to="/sign-up">create an account</RouterLink>
       to proceed
     </p>
@@ -15,7 +18,6 @@
 </template>
 
 <style>
-
 .modal {
   /* background-color: var(--modal-bg-color-light); */
   width: 80%;
@@ -35,15 +37,11 @@
   padding-bottom: 15px;
 }
 
-.input-label {
-  font-size: 20px;
-}
-
 .input-field {
   width: 70%;
   border-color: var(--accent-light);
-  border:0;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 .login-or-sign-up {
@@ -81,5 +79,4 @@ button {
   margin-top: 1vh;
   font-size: 3vh;
 }
-
 </style>

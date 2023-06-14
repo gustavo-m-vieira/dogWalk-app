@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from "vue-router";
 </script>
 
 <template>
@@ -12,18 +12,19 @@ import { RouterLink, RouterView } from 'vue-router'
     <RouterView/>
     <NavBar></NavBar>
   </div>
+
 </template>
 
 <style>
 :root {
   /* https://coolors.co/palette/0fa3b1-b5e2fa-f9f7f3-eddea4-f7a072 */
-  --main-dark: #0FA3B1;
-  --main-light: #B5E2FA;
-  --accent-dark: #F7A072;
-  --accent-light: #EDDEA4;
-  --white: #F9F7F3;
-  --text-blue: #1038B2;
-  --text-red: #D4452F;
+  --main-dark: #0fa3b1;
+  --main-light: #b5e2fa;
+  --accent-dark: #f7a072;
+  --accent-light: #eddea4;
+  --white: #f9f7f3;
+  --text-blue: #1038b2;
+  --text-red: #d4452f;
 }
 
 #app-structure {
@@ -48,31 +49,36 @@ import { RouterLink, RouterView } from 'vue-router'
 
 .background {
   background: linear-gradient(
-    var(--main-light) 15%, 
-    var(--white) 80%, 
-    var(--accent-light));
+    var(--main-light) 15%,
+    var(--white) 80%,
+    var(--accent-light)
+  );
 }
 
 .text-main {
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   color: var(--text-blue);
   font-weight: 550;
+  font-size: 200%;
+}
+
+.input-label {
+  font-size: 200%;
 }
 
 .spinning {
   animation-name: spin;
   animation-duration: 1300ms;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; 
+  animation-timing-function: linear;
 }
 
 @keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 </style>
