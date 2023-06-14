@@ -5,10 +5,12 @@
       <span class="material-symbols-outlined logo">pets</span>
     </div>
 
-    <p class="text-main login-or-sign-up">
-      Please, either
-      <RouterLink class="link" to="/sign-up">login</RouterLink>
+
+    <p class="text-main login-or-sign-up">Please, either
+      <RouterLink class="link" to="/login">login</RouterLink>
+      
       or
+      
       <RouterLink class="link" to="/sign-up">create an account</RouterLink>
       to proceed
     </p>

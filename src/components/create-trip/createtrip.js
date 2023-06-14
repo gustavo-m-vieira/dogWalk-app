@@ -1,21 +1,21 @@
 export default {
 
     data() {
-      return {
-        startDate: "",
-        duration: "60",
-        dogWalker: "",
-        slots: "5",
-        dogType: "",
-        warning: null,
-        loading: false
-      }
+        return {
+            startDate: "",
+            duration: "60",
+            dogWalker: "",
+            slots: "5",
+            dogType: "",
+            warning: null,
+            loading: false
+        }
     },
   
     methods: {
-      clicked() {
-        this.loading = true;
-        console.log(`duration is ${this.duration}`)
-      }
+        clicked() {
+            this.loading = true
+            console.log(`duration is ${this.duration}`)
+        }
     },
-  }
+}
