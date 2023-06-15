@@ -34,7 +34,17 @@
 
       <div class="input-row">
         <label for="email" class="text-main input-label"> Email: </label>
-        <input id="email" class="input-field" v-model="email" placeholder="" />
+        <input id="email" class="input-field" v-model="email"/>
+      </div>  
+
+      <div class="input-row">
+        <label for="phone" class="text-main input-label"> Phone: </label>
+        <input id="phone" class="input-field" v-model="phone"/>
+      </div>  
+
+      <div class="input-row">
+        <label for="cpf" class="text-main input-label"> cpf: </label>
+        <input id="cpf" class="input-field" v-model="cpf"/>
       </div>
 
       <div class="input-row">
@@ -108,7 +118,8 @@
 }
 
 .modal-title {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
+  font-size: 4vh;
 }
 
 .warning {
