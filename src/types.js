@@ -10,3 +10,22 @@
 }
  */
 
+/**
+ * @typedef Login Expected body of the /generate-token POST endpoint
+ *
+ * @property {string} email
+ * @property {string} password
+ */
+
+/**
+ * @typedef LoginResponse Expected response from the /generate-token POST endpoint
+ *
+ * @property {string} name
+ * @property {string} email
+ * @property {string} telephone
+ * @property {string} id
+ * @property {string} role
+ * @property {string} createdAt
+ * @property {string} cpf
+ * @property {string} addresses
+ */

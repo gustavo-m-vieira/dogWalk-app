@@ -1,5 +1,6 @@
 import env from "../../env"
 import router from "../../router"
+import login from "../login/login"
 
 
 export default {
@@ -22,8 +23,15 @@ export default {
             this.loading = true
 
             try {
-                await this.createUser(this.parseUser())
-                router.push("/login")
+                const user = this.parseUser();
+                await this.createUser(user)
+                const auth = await login.methods.authenticate({
+                    email: user.email,
+                    password: user.password
+                })
+
+                console.log(auth)
+                // router.push("/login")
             } 
 
             catch (err) {
@@ -65,7 +73,7 @@ export default {
                     headers: {
                         "Content-Type": "application/json"
                     }
-                });   
+                });
             } 
             
             // In case server communication fails
@@ -78,9 +86,6 @@ export default {
             // Server bad response
             if (!req.ok)
                 throw Error(`Failed to create user: ${resp.message}`)
-
-            return resp
-
         }
     },
 }
