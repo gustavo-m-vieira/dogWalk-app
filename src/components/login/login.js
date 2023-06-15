@@ -1,5 +1,6 @@
 import env from "../../env"
 import * as jwt from "jose"
+import router from "../../router"
 
 
 export default {
@@ -35,8 +36,7 @@ export default {
                 const user = await this.authenticate(credentials)
 
                 // Successful login
-                this.saveUser(user);
-                // router.push("/login")
+                this.onLoginSuccess(user);
             } 
 
             // Login failure
@@ -45,6 +45,21 @@ export default {
                 console.error(err);
                 this.warning = err;
             }
+        },
+
+        /**
+         * Handle successful login redirect and user info storing. 
+         * @param {LoginResponse} user The logged in user.
+         */
+        onLoginSuccess(user) {
+
+            this.saveUser(user);
+
+            if(user.role === "DOGWALKER")
+                router.push("/walker-page");
+
+            else
+                router.push("/tutor-page");
         },
 
         /**
@@ -65,7 +80,8 @@ export default {
             }
 
             // In case server communication fails
-            catch(_) {
+            catch(err) {
+                console.error(err)
                 throw Error("Failed to communicate to servers. Try again later.")
             }
 

@@ -1,5 +1,4 @@
 import env from "../../env"
-import router from "../../router"
 import login from "../login/login"
 
 
@@ -23,15 +22,17 @@ export default {
             this.loading = true
 
             try {
+
+                // Read component form and create account
                 const user = this.parseUser();
                 await this.createUser(user)
+
+                // Login to newly created account
                 const auth = await login.methods.authenticate({
                     email: user.email,
                     password: user.password
                 })
-
-                console.log(auth)
-                // router.push("/login")
+                login.methods.onLoginSuccess(auth);
             } 
 
             catch (err) {
@@ -77,7 +78,8 @@ export default {
             } 
             
             // In case server communication fails
-            catch(_) {
+            catch(err) {
+                console.error(err);
                 throw Error("Failed to communicate to servers. Try again later.")
             }
 

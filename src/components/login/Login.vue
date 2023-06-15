@@ -17,6 +17,7 @@
         <label for="password" class="text-main input-label"> Password: </label>
         <input
           id="password"
+          type="password"
           class="input-field"
           v-model="password"
           placeholder=""
