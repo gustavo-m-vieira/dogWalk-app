@@ -30,7 +30,10 @@ import { RouterView } from "vue-router";
 #app-structure {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
 .glass {

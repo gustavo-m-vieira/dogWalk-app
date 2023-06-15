@@ -11,6 +11,7 @@ export default {
             email: "",
             password: "",
             passwordRepeat: "",
+            phone: "",
             warning: null,
             isWalker: true,
             loading: false
@@ -48,6 +49,17 @@ export default {
          * @returns {CreatableUser}
          */
         parseUser() {
+
+            // Check for empty fields
+            const mandatoryFields = ["firstName", "lastName", "email", "password", "cpf", "phone"]
+            mandatoryFields.forEach(field => {
+                if (this[field].trim() === "")
+                    throw Error(`Field "${field}" cannot be left blank.`);
+            })
+
+            // Check if the passwords match
+            if (this.password !== this.passwordRepeat)
+                throw Error("The provided passwords do not match.")
 
             return {
                 name: this.firstName + this.lastName,
