@@ -27,5 +27,8 @@
   text-align: center;
   width: 100%;
   margin-inline: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
 }
 </style>
