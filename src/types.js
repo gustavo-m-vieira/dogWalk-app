@@ -1,4 +1,8 @@
 /**
+ * @typedef {("TUTOR"|"DOGWALKER")} UserRoles All possible application user roles.
+ */
+
+/**
  * @typedef CreatableUser Expected body of the /users POST endpoint
  *
  * @property {string} name
@@ -6,7 +10,7 @@
  * @property {string} cpf
  * @property {string} telephone
  * @property {string} password
- * @property {("TUTOR"|"DOGWALKER")} role
+ * @property {UserRoles} role
 }
  */
 

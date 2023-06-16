@@ -58,7 +58,7 @@ export default {
 
         /**
          * Redirect to the appropriate user home.
-         * @param {("TUTOR"|"DOGWALKER")} role 
+         * @param {UserRoles} role 
          */
         redirectToUserHome(role) {
 
