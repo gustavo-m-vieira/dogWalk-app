@@ -1,3 +1,6 @@
+import login from "../login/login"
+
+
 export default {
 
     data() {
@@ -13,9 +16,10 @@ export default {
     },
   
     methods: {
-        clicked() {
-            this.loading = true
-            console.log(`duration is ${this.duration}`)
+        async clicked() {
+            this.loading = true;
+            console.log(this.startDate)
+            login.methods.redirectToUserHome("DOGWALKER");
         }
     },
 }

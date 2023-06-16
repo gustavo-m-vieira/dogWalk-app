@@ -11,7 +11,7 @@
       <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.walker">
         <h1 class="text-main modal-title">2:12AM trip by Carlos</h1>
       </li>
-      <button class="material-symbols-outlined add-trip" v-on:click="goHome" v-if="isWalker"> add </button>
+      <RouterLink class="material-symbols-outlined add-trip" v-if="isWalker" to="/create-trip"> add </RouterLink>
     </ul>
 
 
@@ -26,6 +26,7 @@
   border-radius: 100%;
   padding: 1%;
   width: min-content;
+  border-style: solid;
 }
 
 .trip-list {
