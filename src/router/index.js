@@ -25,7 +25,7 @@ const router = createRouter({
             component: () => import("../components/pet-register/PetRegister.vue")
         },
         {
-            path: "/walker-trip",
+            path: "/create-trip",
             name: "create-trip",
             component: () => import("../components/create-trip/CreateTrip.vue")
         },

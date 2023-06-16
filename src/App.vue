@@ -61,8 +61,6 @@ import { RouterView } from "vue-router";
 .text-main {
   font-family: "Amatic SC", cursive;
   color: var(--text-blue);
-  font-weight: 550;
-  font-size: 120%;
 }
 
 .input-label {

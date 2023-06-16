@@ -10,9 +10,9 @@
       </p>
 
       <div class="buttons-container">
-        <RouterLink class="text-button" to="/pet-register ">Register Pet</RouterLink>
-        <RouterLink class="text-button" to="/sign-up">Schedule Trip</RouterLink>
-        <RouterLink class="text-button" to="/trip-list">Trip list</RouterLink>
+        <RouterLink class="text-button" to="/pet-register">Register Pet</RouterLink>
+        <RouterLink class="text-button" to="/sign-up">Scheduled Trips</RouterLink>
+        <RouterLink class="text-button" to="/trip-list">Available Trips</RouterLink>
 <!-- 
         <button class="button text-button" v-on:click="clicked">
           <span class="material-symbols-outlined spinning" v-if="loading"
@@ -46,10 +46,6 @@
   .modal {
     width: 60%;
   }
-}
-
-.modal-title {
-  padding-bottom: 30px;
 }
 
 .warning {

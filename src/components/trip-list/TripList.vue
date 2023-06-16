@@ -11,19 +11,32 @@
       <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.walker">
         <h1 class="text-main modal-title">2:12AM trip by Carlos</h1>
       </li>
+      <button class="material-symbols-outlined add-trip" v-on:click="goHome" v-if="isWalker"> add </button>
     </ul>
+
+
 </template>
 
 <style>
+
+.add-trip {
+  margin-top: 4vh;
+  background: none;
+  color: var(--accent-dark) !important;
+  border-radius: 100%;
+  padding: 1%;
+  width: min-content;
+}
 
 .trip-list {
   overflow: scroll;
   padding: 0;
   margin-top: 3vh;
-  width: 95%;
   border-radius: 5px;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .trip-box {
@@ -32,6 +45,7 @@
   height: 10vh;
   border-radius: 5px;
   display: flex;
+  width: 95%;
   flex-direction: column;
 }
 
@@ -48,10 +62,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.modal-title {
-  padding-bottom: 30px;
 }
 
 .warning {

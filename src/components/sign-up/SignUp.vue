@@ -119,7 +119,6 @@
 
 .modal-title {
   padding-bottom: 10px;
-  font-size: 4vh;
 }
 
 .warning {
@@ -136,6 +135,7 @@
 .login-redirect {
   padding-top: 1vh;
   padding-inline: 1vw;
+  font-size: 120%;
 }
 
 .input-field {

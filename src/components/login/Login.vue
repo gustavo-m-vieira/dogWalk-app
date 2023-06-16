@@ -55,13 +55,15 @@
   }
 }
 
+.login-redirect {
+  padding-top: 1vh;
+  padding-inline: 1vw;
+  font-size: 120%;
+}
+
 .warning {
   color: var(--text-red) !important;
   padding-bottom: 1vh;
-}
-
-.modal-title {
-  padding-bottom: 30px;
 }
 
 .input-row {

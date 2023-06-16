@@ -12,6 +12,7 @@ export default {
             password: "",
             passwordRepeat: "",
             phone: "",
+            cpf: "",
             warning: null,
             isWalker: true,
             loading: false

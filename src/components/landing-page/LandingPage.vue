@@ -27,10 +27,6 @@
   flex-direction: column;
 }
 
-.modal-title {
-  padding-bottom: 30px;
-}
-
 .input-row {
   display: flex;
   justify-content: space-between;

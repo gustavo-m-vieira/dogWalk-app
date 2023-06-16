@@ -78,10 +78,6 @@
   }
 }
 
-.modal-title {
-  padding-bottom: 30px;
-}
-
 .warning {
   color: var(--text-red) !important;
   padding-bottom: 1vh;

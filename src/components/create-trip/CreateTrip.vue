@@ -17,23 +17,36 @@
           id="startDate"
           class="input-field"
           v-model="startDate"
+          type="date"
           placeholder=""
         />
       </div>
 
       <div class="input-row">
-        <label for="duration" class="text-main input-label"> Duration: </label>
+        <label for="duration" class="text-main input-label">
+          Duration (in mins):
+        </label>
         <input
           id="duration"
           class="input-field"
-          v-model="Duration"
+          v-model="duration"
+          type="number"
+          min="5"
+          max="60"
           placeholder=""
         />
       </div>
 
       <div class="input-row">
         <label for="slots" class="text-main input-label"> Slots: </label>
-        <input id="slots" class="input-field" v-model="Slots" placeholder="" />
+        <input
+          id="slots"
+          class="input-field"
+          v-model="slots"
+          type="number"
+          min="1"
+          max="6"
+        />
       </div>
 
       <div class="input-row">
@@ -49,7 +62,7 @@
         <span class="material-symbols-outlined spinning" v-if="loading"
           >cached</span
         >
-        <p v-else>Add Dog</p>
+        <p v-else >Create Trip</p>
       </button>
     </div>
   </div>
@@ -71,10 +84,6 @@
   }
 }
 
-.modal-title {
-  padding-bottom: 30px;
-}
-
 .warning {
   color: var(--text-red) !important;
   padding-bottom: 1vh;
@@ -92,10 +101,11 @@
 }
 
 .input-field {
-  width: 60%;
+  width: 40%;
   border-color: var(--accent-light);
   border: 0;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  text-align: center;
 }
 
 button {
