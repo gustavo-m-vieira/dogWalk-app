@@ -29,3 +29,11 @@
  * @property {string} cpf
  * @property {string} addresses
  */
+
+/**
+ * @typedef Trip
+ *
+ * @property {string} walker
+ * @property {string} time
+ * @property {number} slots
+ */

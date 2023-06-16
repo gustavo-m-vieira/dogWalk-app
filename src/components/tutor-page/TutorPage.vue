@@ -10,13 +10,10 @@
       </p>
 
       <div class="buttons-container">
-        <button class="button text-button" v-on:click="clicked">
-          <span class="material-symbols-outlined spinning" v-if="loading"
-            >cached</span
-          >
-          <p v-else>Register Pet</p>
-        </button>
-
+        <RouterLink class="text-button" to="/pet-register ">Register Pet</RouterLink>
+        <RouterLink class="text-button" to="/sign-up">Schedule Trip</RouterLink>
+        <RouterLink class="text-button" to="/trip-list">Trip list</RouterLink>
+<!-- 
         <button class="button text-button" v-on:click="clicked">
           <span class="material-symbols-outlined spinning" v-if="loading"
             >cached</span
@@ -29,7 +26,7 @@
             >cached</span
           >
           <p v-else>Trip list</p>
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
@@ -78,7 +75,16 @@
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-.button {
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  flex-grow: 2;
+  flex-wrap: wrap;
+}
+
+.text-button {
   background: var(--accent-dark);
   border-radius: 6px;
   color: var(--white) !important;
@@ -95,18 +101,6 @@
   margin: 1%;
   flex-grow: 2;
   text-align: center;
-}
-
-.buttons-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100%;
-  flex-grow: 2;
-  flex-wrap: wrap;
-}
-
-.text-button {
   font-family: "Amatic SC", cursive;
   color: var(--text-blue);
   font-weight: 550;

@@ -1,4 +1,6 @@
 import router from "../../router"
+import { getCurrentUser } from "../../utils";
+import login from "../login/login"
 
 
 export default {
@@ -34,6 +36,14 @@ export default {
                 return;
 
             router.back()
+        },
+
+        /**
+         * Redirect the user to the correct homepage.
+         */
+        goHome() {
+            const user = getCurrentUser()
+            login.methods.redirectToUserHome(user.role);
         },
 
         /**

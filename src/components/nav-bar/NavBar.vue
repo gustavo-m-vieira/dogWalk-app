@@ -3,7 +3,7 @@
   <div id="nav-bar" class="glass" v-if="visible">
    
     <button class="material-symbols-outlined nav-button nav-button" v-on:click="goBack">arrow_back</button>
-    <RouterLink class="material-symbols-outlined nav-button nav-button" to="/tutor-page">home</RouterLink>
+    <button class="material-symbols-outlined nav-button nav-button" v-on:click="goHome"> home </button>
     <button class="material-symbols-outlined nav-button nav-button" v-on:click="logout"> logout </button>
 
   </div>
