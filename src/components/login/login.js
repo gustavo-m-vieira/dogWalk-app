@@ -52,11 +52,18 @@ export default {
          * @param {LoginResponse} user The logged in user.
          */
         onLoginSuccess(user) {
-
             this.saveUser(user);
+            this.redirectToUserHome(user.role);
+        },
 
-            if(user.role === "DOGWALKER")
-                router.push("/walker-page");
+        /**
+         * Redirect to the appropriate user home.
+         * @param {("TUTOR"|"DOGWALKER")} role 
+         */
+        redirectToUserHome(role) {
+
+            if(role === "DOGWALKER")
+                router.push("/trip-list");
 
             else
                 router.push("/tutor-page");
@@ -101,6 +108,8 @@ export default {
         saveUser(user) {
             localStorage.setItem("user", JSON.stringify(user))
             localStorage.setItem("loggedIn", true)
+            Window.loggedIn = true;
+            console.log(Window.loggedIn)
         }
     },
 }

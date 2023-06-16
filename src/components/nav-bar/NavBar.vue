@@ -1,10 +1,10 @@
 <script src="./navBar.js"></script>
 <template>
-  <div id="nav-bar" class="glass">
+  <div id="nav-bar" class="glass" v-if="visible">
    
     <button class="material-symbols-outlined nav-button nav-button" v-on:click="goBack">arrow_back</button>
     <RouterLink class="material-symbols-outlined nav-button nav-button" to="/tutor-page">home</RouterLink>
-    <RouterLink class="material-symbols-outlined nav-button nav-button" to="/walker-page">sound_detection_dog_barking</RouterLink>
+    <button class="material-symbols-outlined nav-button nav-button" v-on:click="logout"> logout </button>
 
   </div>
 </template>
