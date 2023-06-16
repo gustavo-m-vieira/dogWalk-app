@@ -1,3 +1,5 @@
+import { getCurrentUser } from "../../utils";
+
 export default {
 
     data() {
@@ -7,6 +9,7 @@ export default {
             dogWalker: "",
             slots: "5",
             dogType: "",
+            name: getCurrentUser().name,
             warning: null,
             loading: false
         }

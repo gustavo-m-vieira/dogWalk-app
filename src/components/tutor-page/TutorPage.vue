@@ -3,7 +3,7 @@
 <template>
   <div class="fullscreen">
     <div class="modal glass">
-      <h1 class="text-main modal-title">Welcome to the tutors page</h1>
+      <h1 class="text-main modal-title">Welcome back, {{name}}!</h1>
 
       <p class="warning">
         {{ warning }}
@@ -84,7 +84,6 @@
   background: var(--accent-dark);
   border-radius: 6px;
   color: var(--white) !important;
-  height: 5vh;
   border-style: double;
   font-weight: 600 !important;
   border-color: var(--accent-dark);
@@ -93,7 +92,6 @@
   font-size: 3vh;
   /* display: flex; */
   width: 29%;
-  height: 130px;
   margin: 1%;
   flex-grow: 2;
   text-align: center;

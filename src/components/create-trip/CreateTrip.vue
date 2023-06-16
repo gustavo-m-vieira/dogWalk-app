@@ -18,7 +18,6 @@
           class="input-field"
           v-model="startDate"
           type="date"
-          placeholder=""
         />
       </div>
 
@@ -33,7 +32,6 @@
           type="number"
           min="5"
           max="60"
-          placeholder=""
         />
       </div>
 

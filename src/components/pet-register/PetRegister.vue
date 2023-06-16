@@ -11,12 +11,12 @@
 
       <div class="input-row">
         <label for="name" class="text-main input-label"> Name: </label>
-        <input id="name" class="input-field" v-model="Name" placeholder="" />
+        <input id="name" class="input-field" v-model="Name" />
       </div>
 
       <div class="input-row">
         <label for="breed" class="text-main input-label"> Breed: </label>
-        <input id="breed" class="input-field" v-model="Breed" placeholder="" />
+        <input id="breed" class="input-field" v-model="Breed" />
       </div>
 
       <div class="input-row">
@@ -37,7 +37,7 @@
           id="birthDate"
           class="input-field"
           v-model="BirthDate"
-          placeholder=""
+          type="date"
         />
       </div>
 

@@ -10,7 +10,7 @@
 
       <div class="input-row">
         <label for="email" class="text-main input-label"> Email: </label>
-        <input id="email" class="input-field" v-model="email" placeholder="" />
+        <input id="email" class="input-field" v-model="email" />
       </div>
 
       <div class="input-row">
@@ -20,7 +20,6 @@
           type="password"
           class="input-field"
           v-model="password"
-          placeholder=""
         />
       </div>
 

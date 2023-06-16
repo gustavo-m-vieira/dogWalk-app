@@ -106,10 +106,8 @@ export default {
          * @param {LoginResponse} user
          */
         saveUser(user) {
-            localStorage.setItem("user", JSON.stringify(user))
-            localStorage.setItem("loggedIn", true)
-            Window.loggedIn = true;
-            console.log(Window.loggedIn)
+            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("loggedIn", true);
         }
     },
 }

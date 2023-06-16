@@ -16,7 +16,6 @@
           id="first-name"
           class="input-field"
           v-model="firstName"
-          placeholder=""
         />
       </div>
 
@@ -28,7 +27,6 @@
           id="last-name"
           class="input-field"
           v-model="lastName"
-          placeholder=""
         />
       </div>
 
@@ -56,7 +54,6 @@
           id="password"
           class="input-field"
           v-model="password"
-          placeholder=""
         />
       </div>
 
@@ -69,7 +66,6 @@
           id="password-repeat"
           class="input-field"
           v-model="passwordRepeat"
-          placeholder=""
         />
       </div>
 
