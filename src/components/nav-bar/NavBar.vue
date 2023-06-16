@@ -20,7 +20,7 @@
   justify-content: space-around;
   height: 5.3vh;
   width: 100vw;
-  margin-top: 4vh;
+  box-shadow: 1px -6px 15px 4px rgb(51 51 51 / 18%);
 }
 
 .nav-button {
@@ -32,5 +32,18 @@
   margin-top: 0;
   margin-bottom: 0;
   border: 0;
+}
+
+button {
+  background: var(--accent-dark);
+  border-radius: 6px;
+  color: var(--white) !important;
+  height: 5vh;
+  border-style: double;
+  font-weight: 600 !important;
+  border-color: var(--accent-dark);
+  box-shadow: none;
+  margin-top: 1vh;
+  font-size: 3vh;
 }
 </style>

@@ -8,6 +8,8 @@ export default {
         return {
 
             isWalker: null,
+            date: "",
+            zip: "",
 
             /** @type {Trip[]} */
             trips: [

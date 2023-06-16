@@ -3,13 +3,24 @@
 <template>
 
     <div class="location-bar glass">
-        <label for="zip" class="text-main input-label" pattern="[0-9]*"> ZIP Code: </label>
-        <input id="zip" class="input-field" v-model="cpf"/>
+        <label for="zip" style="grid-area: AL;" class="text-main input-label" > ZIP Code: </label>
+        <input id="zip" style="grid-area: A;" class="input-field" v-model="zip"/>
+
+        <label for="date" style="grid-area: BL;" class="text-main input-label" pattern="[0-9]*"> Date: </label>
+        <input id="date" style="grid-area: B;" class="input-field" v-model="date" type="date"/>
     </div>
 
-    <ul class="trip-list">
+    <ul class="trip-list" >
       <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.walker">
-        <h1 class="text-main modal-title">2:12AM trip by Carlos</h1>
+        <h1 class="text-main trip-box-title">2:12AM trip by Carlos</h1>
+        
+        <ul class="slot-list">
+          <li class="trip-slot"></li>
+          <li class="trip-slot"></li>
+          <li class="trip-slot"></li>
+          <li class="trip-slot"></li>
+        </ul>
+        
       </li>
       <RouterLink class="material-symbols-outlined add-trip" v-if="isWalker" to="/create-trip"> add </RouterLink>
     </ul>
@@ -18,6 +29,28 @@
 </template>
 
 <style>
+
+.trip-box-title {
+  padding-left: 2vw;
+}
+
+.slot-list {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  align-items: center;
+  justify-content: start;
+  padding: 0;
+}
+
+.trip-slot {
+  height: 10vh;
+  width: 10vh;
+  background: var(--white);
+  margin: 1vh;
+  border-radius: 10%;
+}
 
 .add-trip {
   margin-top: 4vh;
@@ -32,7 +65,7 @@
 .trip-list {
   overflow: scroll;
   padding: 0;
-  margin-top: 3vh;
+  margin-top: 0vh;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -41,9 +74,7 @@
 }
 
 .trip-box {
-  /* background-color: var(--modal-bg-color-light); */
   margin-top: 3vh;
-  height: 10vh;
   border-radius: 5px;
   display: flex;
   width: 95%;
@@ -59,45 +90,22 @@
 .location-bar {
   width: 100%;
   border-radius: 0;
-  height: 8vh;
-  display: flex;
+  display: grid;
+  grid-template: "AL BL"
+                 "A B";
+  z-index: 10;
   justify-content: center;
   align-items: center;
-}
-
-.warning {
-  color: var(--text-red) !important;
-  padding-bottom: 1vh;
-}
-
-.input-row {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 15px;
-}
-
-.login-redirect {
-  padding-top: 1vh;
-  padding-inline: 1vw;
+  box-shadow: 0 0 15px 4px rgba(95, 95, 95, 0.24);
 }
 
 .input-field {
-  width: 60%;
-  border-color: var(--accent-light);
-  border: 0;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  margin-inline: 2vw;
+  margin-bottom: 2vh;
 }
 
-button {
-  background: var(--accent-dark);
-  border-radius: 6px;
-  color: var(--white) !important;
-  height: 5vh;
-  border-style: double;
-  font-weight: 600 !important;
-  border-color: var(--accent-dark);
-  box-shadow: none;
-  margin-top: 1vh;
-  font-size: 3vh;
+.input-label {
+  padding-inline: 2vw;
 }
+
 </style>
