@@ -49,10 +49,21 @@
 
       <div class="input-row">
         <label for="dogType" class="text-main input-label"> DogType: </label>
-        <select id="dogType" class="input-field" v-model="DogType">
+        <select id="dogType" class="input-field" v-model="dogType">
           <option value="COOL">Cool</option>
           <option value="SHY">Shy</option>
           <option value="ANGRY">Angry</option>
+        </select>
+      </div>
+
+      <div class="input-row">
+        <label for="address" class="text-main input-label">
+          Address:
+        </label>
+        <select class="input-field" v-model="address">
+          <option v-for="item in addresses" :value="item.id" :key="item.id">
+          {{ item.description }}
+          </option>
         </select>
       </div>
 

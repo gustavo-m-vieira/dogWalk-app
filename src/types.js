@@ -31,7 +31,7 @@
  * @property {string} role
  * @property {string} createdAt
  * @property {string} cpf
- * @property {string} addresses
+ * @property {Array<Address>} addresses
  */
 
 /**
@@ -40,4 +40,20 @@
  * @property {string} walker
  * @property {string} time
  * @property {number} slots
+ */
+
+/**
+ * @typedef Address
+ *
+ * @property {string}   id
+ * @property {string}    street
+ * @property {number}    number
+ * @property {string}    [complement]
+ * @property {string}    city
+ * @property {string}    district
+ * @property {string}   state
+ * @property {string}    country
+ * @property {string}   zipCode
+ * @property {string}   createdAt
+ * @property {string}   [deletedAt]
  */
