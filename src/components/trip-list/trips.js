@@ -10,6 +10,7 @@ export default {
             isWalker: null,
             date: "",
             zip: "",
+            selectedDog: null,
 
             /** @type {Trip[]} */
             trips: [
@@ -63,6 +64,11 @@ export default {
         clicked() {
             this.loading = true
             console.log(`duration is ${this.duration}`)
+        },
+        
+        selectDogModal(box) {
+            document.getElementById("select-a-dog").showModal();
+            console.log(box)
         }
     },
 

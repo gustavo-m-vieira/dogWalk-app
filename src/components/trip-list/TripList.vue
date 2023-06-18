@@ -1,34 +1,91 @@
 <script src="./trips.js"></script>
 
 <template>
+  <div class="location-bar glass">
+    <label for="zip" style="grid-area: AL" class="text-main input-label">
+      ZIP Code:
+    </label>
+    <input id="zip" style="grid-area: A" class="input-field" v-model="zip" />
 
-    <div class="location-bar glass">
-        <label for="zip" style="grid-area: AL;" class="text-main input-label" > ZIP Code: </label>
-        <input id="zip" style="grid-area: A;" class="input-field" v-model="zip"/>
+    <label
+      for="date"
+      style="grid-area: BL"
+      class="text-main input-label"
+      pattern="[0-9]*"
+    >
+      Date:
+    </label>
+    <input
+      id="date"
+      style="grid-area: B"
+      class="input-field"
+      v-model="date"
+      type="date"
+    />
+  </div>
 
-        <label for="date" style="grid-area: BL;" class="text-main input-label" pattern="[0-9]*"> Date: </label>
-        <input id="date" style="grid-area: B;" class="input-field" v-model="date" type="date"/>
-    </div>
+  <dialog id="select-a-dog">
+    <form>
+      <p>
+        <label>
+          Who is taking a trip today?
+          <select v-model="selectedDog" class="dog-selector">
+            <option value="default">Choose…</option>
+            <option>Brine shrimp</option>
+            <option>Red panda</option>
+            <option>Spider monkey</option>
+          </select>
+        </label>
+      </p>
+      <div class="modal-list">
+        <button >Cancel</button>
+        <button >Confirm</button>
+      </div>
+    </form>
+  </dialog>
 
-    <ul class="trip-list" >
-      <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.walker">
-        <h1 class="text-main trip-box-title">2:12AM trip by Carlos</h1>
-        
-        <ul class="slot-list">
-          <li class="trip-slot"></li>
-          <li class="trip-slot"></li>
-          <li class="trip-slot"></li>
-          <li class="trip-slot"></li>
-        </ul>
-        
-      </li>
-      <RouterLink class="material-symbols-outlined add-trip" v-if="isWalker" to="/create-trip"> add </RouterLink>
-    </ul>
+  <ul class="trip-list">
+    <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.walker">
+      <h1 class="text-main trip-box-title">2:12AM trip by Carlos</h1>
 
-
+      <ul class="slot-list">
+        <li class="trip-slot" v-on:click="selectDogModal(trip.walker)"></li>
+        <li class="trip-slot"></li>
+        <li class="trip-slot"></li>
+        <li class="trip-slot"></li>
+      </ul>
+    </li>
+    <RouterLink
+      class="material-symbols-outlined add-trip"
+      v-if="isWalker"
+      to="/create-trip"
+    >
+      add
+    </RouterLink>
+  </ul>
 </template>
 
 <style>
+#select-a-dog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-width: 0px;
+  width: 70vw;
+  box-shadow: 1px 2px 0 0 rgba(119, 119, 119, 0.281);
+}
+
+.dog-selector {
+  margin-top: 2vh;
+  width: 100%;
+}
+
+.modal-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+}
 
 .trip-box-title {
   padding-left: 2vw;
@@ -91,8 +148,9 @@
   width: 100%;
   border-radius: 0;
   display: grid;
-  grid-template: "AL BL"
-                 "A B";
+  grid-template:
+    "AL BL"
+    "A B";
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -107,5 +165,4 @@
 .input-label {
   padding-inline: 2vw;
 }
-
 </style>
