@@ -11,17 +11,17 @@
 
       <div class="input-row">
         <label for="name" class="text-main input-label"> Name: </label>
-        <input id="name" class="input-field" v-model="Name" />
+        <input id="name" class="input-field" v-model="name" />
       </div>
 
       <div class="input-row">
         <label for="breed" class="text-main input-label"> Breed: </label>
-        <input id="breed" class="input-field" v-model="Breed" />
+        <input id="breed" class="input-field" v-model="breed" />
       </div>
 
       <div class="input-row">
         <label for="size" class="text-main input-label"> Size: </label>
-        <select class="input-field" v-model="Size">
+        <select class="input-field" v-model="size">
           <option value="TINY">Tiny</option>
           <option value="SMALL">Small</option>
           <option value="MEDIUM">Medium</option>
@@ -36,7 +36,7 @@
         <input
           id="birthDate"
           class="input-field"
-          v-model="BirthDate"
+          v-model="birthDate"
           type="date"
         />
       </div>
