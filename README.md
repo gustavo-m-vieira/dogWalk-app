@@ -2,6 +2,11 @@
 
 Este projeto contem o frontend da aplicação dog walk, construído como uma Single-Page Application (SPA) usando VueJs. A aplicação conta com testes unitários (ver [seção de testes](#Executando-os-testes-unitários)) e [linting](#Executando-o-linter).
 
+## Sobre o projeto
+
+### Tipagem
+Para facilitar o desenvolvimento, foi utilizado o JSDoc para definir os contratos entre backend e frontend, bem como tipos específicos a aplicação frontend. Os tipos definidos podem ser encontrados no arquivo `src/types.js`.
+
 ## Requisitos
 
 Para a instalação local, é necessário que o gerenciador de pacotes [npm](https://www.npmjs.com/) esteja instalado. Para a instalação com docker, é necessário um ambiente Docker configurado, com acesso via CLI.
