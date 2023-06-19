@@ -37,9 +37,14 @@
 /**
  * @typedef Trip
  *
- * @property {string} walker
- * @property {string} time
+ * @property {string} id
+ * @property {string} walkerId
+ * @property {string} duration
  * @property {number} slots
+ * @property {string} dogType
+ * @property {string} dogs
+ * @property {string} startDate
+ * @property {string} addressId
  */
 
 /**

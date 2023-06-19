@@ -45,11 +45,13 @@
     <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.walker">
       <h1 class="text-main trip-box-title">2:12AM trip by Carlos</h1>
 
-      <ul class="slot-list">
-        <li class="trip-slot" v-on:click="selectDogModal(trip.walker)"></li>
-        <li class="trip-slot"></li>
-        <li class="trip-slot"></li>
-        <li class="trip-slot"></li>
+      <ul class="slot-list" >
+        <li class="trip-slot filled-slot" v-on:click="selectDogModal(trip.walker)" v-for="dog in trip.dogs" v-bind:key="dog.id"></li>
+        <li class="trip-slot" 
+          v-on:click="selectDogModal(trip.walker)" 
+          v-for="slot in Array(trip.slots - trip.dogs.length).keys()" 
+          v-bind:key="slot"
+        ></li>
       </ul>
     </li>
     <RouterLink
@@ -104,6 +106,10 @@
   background: var(--white);
   margin: 1vh;
   border-radius: 10%;
+}
+
+.filled-slot {
+  background: red;
 }
 
 .add-trip {
