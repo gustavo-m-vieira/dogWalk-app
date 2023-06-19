@@ -43,6 +43,11 @@ const router = createRouter({
       name: "trip-detail",
       component: () => import("../components/trip-resume/TripResume.vue"),
     },
+    {
+      path: "/add-address",
+      name: "add-address",
+      component: () => import("../components/add-address/addAddress.vue"),
+    },
   ],
 });
 
