@@ -24,7 +24,9 @@ export default {
       };
     },
 
-    async clicked() {
+    async clicked(event) {
+      event.preventDefault();
+
       this.loading = true;
       const credentials = this.getCredentials();
 

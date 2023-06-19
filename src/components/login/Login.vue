@@ -1,7 +1,8 @@
 <script src="./login.js"></script>
+
 <template>
   <div class="fullscreen">
-    <div class="modal glass">
+    <form class="modal glass" @submit="clicked">
       <h1 class="text-main modal-title">Welcome back, please login</h1>
 
       <p class="warning">
@@ -23,7 +24,7 @@
         />
       </div>
 
-      <button class="button text-main" v-on:click="clicked">
+      <button class="button text-main" type="submit">
         <span class="material-symbols-outlined spinning" v-if="loading"
           >cached</span
         >
@@ -35,7 +36,7 @@
         <RouterLink class="link" to="/sign-up">here</RouterLink>
         sign up.
       </p>
-    </div>
+    </form>
   </div>
 </template>
 <style>

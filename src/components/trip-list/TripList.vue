@@ -167,7 +167,7 @@
 }
 
 .trip-list {
-  overflow: scroll;
+  overflow-y: auto;
   padding: 0;
   margin-top: 0vh;
   border-radius: 5px;
