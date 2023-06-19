@@ -4,104 +4,104 @@ import login from "../login/login"
 
 export default {
 
-    data() {
-        return {
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: "",
-            passwordRepeat: "",
-            phone: "",
-            cpf: "",
-            warning: null,
-            isWalker: true,
-            loading: false
-        }
-    },
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      passwordRepeat: "",
+      phone: "",
+      cpf: "",
+      warning: null,
+      isWalker: true,
+      loading: false
+    }
+  },
   
-    methods: {
-        async clicked() {
-            this.loading = true
+  methods: {
+    async clicked() {
+      this.loading = true
 
-            try {
+      try {
 
-                // Read component form and create account
-                const user = this.parseUser();
-                await this.createUser(user)
+        // Read component form and create account
+        const user = this.parseUser();
+        await this.createUser(user)
 
-                // Login to newly created account
-                const auth = await login.methods.authenticate({
-                    email: user.email,
-                    password: user.password
-                })
-                login.methods.onLoginSuccess(auth);
-            } 
+        // Login to newly created account
+        const auth = await login.methods.authenticate({
+          email: user.email,
+          password: user.password
+        })
+        login.methods.onLoginSuccess(auth);
+      } 
 
-            catch (err) {
-                this.loading = false;
-                console.error(err);
-                this.warning = err;
-            }
-        },
+      catch (err) {
+        this.loading = false;
+        console.error(err);
+        this.warning = err;
+      }
+    },
 
-        /**
+    /**
          * Get user info as a CreatableUser from form data.
          * @throws In case the user data is invalid
          * @returns {CreatableUser}
          */
-        parseUser() {
+    parseUser() {
 
-            // Check for empty fields
-            const mandatoryFields = ["firstName", "lastName", "email", "password", "cpf", "phone"]
-            mandatoryFields.forEach(field => {
-                if (this[field].trim() === "")
-                    throw Error(`Field "${field}" cannot be left blank.`);
-            })
+      // Check for empty fields
+      const mandatoryFields = ["firstName", "lastName", "email", "password", "cpf", "phone"]
+      mandatoryFields.forEach(field => {
+        if (this[field].trim() === "")
+          throw Error(`Field "${field}" cannot be left blank.`);
+      })
 
-            // Check if the passwords match
-            if (this.password !== this.passwordRepeat)
-                throw Error("The provided passwords do not match.")
+      // Check if the passwords match
+      if (this.password !== this.passwordRepeat)
+        throw Error("The provided passwords do not match.")
 
-            return {
-                name: this.firstName + this.lastName,
-                email: this.email,
-                password: this.password,
-                cpf: this.cpf,
-                role: this.isWalker ? "DOGWALKER" : "TUTOR",
-                telephone: this.phone
-            }
-        },
+      return {
+        name: this.firstName + this.lastName,
+        email: this.email,
+        password: this.password,
+        cpf: this.cpf,
+        role: this.isWalker ? "DOGWALKER" : "TUTOR",
+        telephone: this.phone
+      }
+    },
 
-        /**
+    /**
          * Creates a new application user.
          * @param {CreatableUser} user The user info
          * @throws On bad response
          */
-        async createUser(user) {
+    async createUser(user) {
 
-            let req;
-            try {
-                req = await fetch(env.apiUrl + env.apiRoutes.createUser, {
-                    method: "POST",
-                    body: JSON.stringify(user),
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                });
-            } 
+      let req;
+      try {
+        req = await fetch(env.apiUrl + env.apiRoutes.createUser, {
+          method: "POST",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+      } 
             
-            // In case server communication fails
-            catch(err) {
-                console.error(err);
-                throw Error("Failed to communicate to servers. Try again later.")
-            }
+      // In case server communication fails
+      catch(err) {
+        console.error(err);
+        throw Error("Failed to communicate to servers. Try again later.")
+      }
 
-            const resp = await req.json();
+      const resp = await req.json();
 
-            // Server bad response
-            if (!req.ok)
-                throw Error(`Failed to create user: ${resp.message}`)
-        }
-    },
+      // Server bad response
+      if (!req.ok)
+        throw Error(`Failed to create user: ${resp.message}`)
+    }
+  },
 }
   

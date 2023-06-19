@@ -122,7 +122,7 @@ export default {
 
           headers: {
             "Content-Type": "application/json",
-            Authorization: getToken(),
+            Authorization: getToken(),  
           },
         });
       } catch (err) {
