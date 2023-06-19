@@ -43,6 +43,20 @@
  */
 
 /**
+ * @typedef Dog
+ *
+ * @property {string} id
+ * @property {string} createdAt
+ * @property {string} deletedAt
+ * @property {string} name
+ * @property {string} breed
+ * @property {string} size
+ * @property {string} birthDate
+ * @property {string} temperament
+ * @property {string} tutorId
+ */
+
+/**
  * @typedef Address
  *
  * @property {string}   id
