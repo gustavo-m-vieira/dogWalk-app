@@ -112,6 +112,33 @@ export default {
 
       window.location.href = `/trip-list?zip=${this.zip}&date=${this.date}`;
     },
+
+    async deleteTrip({ id: tripId }) {
+      this.loading = true;
+      let req;
+      try {
+        req = await fetch(env.apiUrl + env.apiRoutes.deleteTrip(tripId), {
+          method: "DELETE",
+
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: getToken(),
+          },
+        });
+      } catch (err) {
+        // In case server communication fails
+        console.error(err);
+        throw Error("Failed to communicate to servers. Try again later.");
+      }
+
+      const resp = await req.json();
+
+      // Server bad response
+      if (!req.ok) throw Error(`Failed to create user: ${resp.message}`);
+
+      this.trips = this.trips.filter((trip) => trip.id !== tripId);
+      this.loading = false;
+    },
   },
 
   async created() {

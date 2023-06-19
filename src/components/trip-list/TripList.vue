@@ -71,6 +71,7 @@
         <button
           class="material-symbols-outlined delete-trip"
           v-if="trip.walkerId === userId"
+          v-on:click="deleteTrip(trip)"
         >
           delete
         </button>
@@ -156,6 +157,7 @@
 
 .add-trip {
   margin-top: 4vh;
+  margin-bottom: 4vh;
   background: none;
   color: var(--accent-dark) !important;
   border-radius: 100%;
