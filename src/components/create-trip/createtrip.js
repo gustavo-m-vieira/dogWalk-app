@@ -10,6 +10,8 @@ export default {
       startDate: "",
       duration: "60",
       dogWalker: "",
+      hour: 12,
+      minute: 0,
       slots: "5",
       dogType: "",
       address: "",
@@ -46,7 +48,6 @@ export default {
         "duration",
         "slots",
         "dogType",
-        "address",
       ];
       mandatoryFields.forEach((field) => {
         console.log({ field, value: this[field] });
@@ -57,12 +58,16 @@ export default {
           throw Error(`Field "${field}" cannot be left blank.`);
       });
 
+      // Convert date to ISO string accounting for timezone
+      const zone = new Date().toLocaleTimeString("en-us",{timeZoneName:"short"}).split(" ")[2];
+      const date = new Date(Date.parse(`${this.startDate} ${this.hour}:${this.minute}:00 ${zone}`)).toISOString()
+
       return {
-        startDate: this.startDate,
+        startDate: date,
         duration: parseInt(this.duration, 10),
         slots: parseInt(this.slots, 10),
         dogType: this.dogType,
-        addressId: this.address,
+        addressId: "this.address",
       };
     },
 

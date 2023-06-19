@@ -11,7 +11,7 @@
 
       <div class="input-row">
         <label for="startDate" class="text-main input-label">
-          StartDate:
+          Dia:
         </label>
         <input
           id="startDate"
@@ -19,6 +19,35 @@
           v-model="startDate"
           type="date"
         />
+      </div>
+
+      <div class="input-row">
+        <label for="hour" class="text-main input-label">
+          Horário (H:M):
+        </label>
+
+        <div class="sub-field-box">
+          <input
+            id="hour"
+            class="sub-field"
+            v-model="hour"
+            type="number"
+            min="0"
+            max="24"
+            step="1"
+            placeholder="12"
+          />        
+          <input
+            id="minute"
+            class="sub-field"
+            v-model="minute"
+            type="number"
+            min="0"
+            max="60"
+            step="1"
+            placeholder="0"
+          />
+        </div>
       </div>
 
       <div class="input-row">
@@ -116,6 +145,27 @@
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   text-align: center;
 }
+
+
+.sub-field-box {
+  width: 40%;
+  border: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 2vw;
+  margin-bottom: 2vh;
+  align-items: center;
+}
+
+.sub-field {
+  width: 40%;
+  border-color: var(--accent-light);
+  border: 0;
+  height: 30px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
 
 button {
   background: var(--accent-dark);
