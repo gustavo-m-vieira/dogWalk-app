@@ -12,6 +12,7 @@ export default {
             date: "",
             zip: "",
             selectedDog: null,
+            dogs: [],
 
             /** @type {Trip[]} */
             trips: [
@@ -81,13 +82,14 @@ export default {
         async getUserDogs(userId, token) {
             let req;
             try {
-                req = await fetch(env.apiUrl + env.apiRoutes.getDogs, {
-                    method: "GET",
-                    headers: {
-                        "Authorization": token,
-                        "Content-Type": "application/json",
-                    },
-                });
+                req = await fetch(
+                    `${env.apiUrl}${env.apiRoutes.getDogs}?${new URLSearchParams({tutorId: userId})}`, {
+                        method: "GET",
+                        headers: {
+                            "Authorization": token,
+                            "Content-Type": "application/json",
+                        },
+                    });
             } catch (err) {
                 // In case server communication fails
                 console.error(err);
