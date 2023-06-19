@@ -30,10 +30,7 @@
         <label>
           Who is taking a trip today?
           <select v-model="selectedDog" class="dog-selector">
-            <option value="default">Choose…</option>
-            <option>Brine shrimp</option>
-            <option>Red panda</option>
-            <option>Spider monkey</option>
+            <option v-for="dog in dogs" v-bind:key="dog.id">{{ dog.name }}</option>
           </select>
         </label>
       </p>
