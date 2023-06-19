@@ -13,6 +13,8 @@
         <RouterLink class="text-button" to="/pet-register">Register Pet</RouterLink>
         <RouterLink class="text-button" to="/sign-up">Scheduled Trips</RouterLink>
         <RouterLink class="text-button" to="/trip-list">Available Trips</RouterLink>
+        <RouterLink class="text-button" to="/add-address">Add Address</RouterLink>
+        
 <!-- 
         <button class="button text-button" v-on:click="clicked">
           <span class="material-symbols-outlined spinning" v-if="loading"
