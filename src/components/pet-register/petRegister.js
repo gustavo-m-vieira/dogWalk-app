@@ -33,6 +33,25 @@ export default {
       }
     },
 
+    handleFileChange(event) {
+      const file = event.target.files[0];
+      const extension = file.name.split(".").pop().toLowerCase();
+
+      if (extension !== "png") {
+        throw new Error("select a PNG file.");
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        this.imageData = reader.result;
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    },
+
     parseDog() {
       // Check for empty fields
       const mandatoryFields = [
@@ -47,14 +66,17 @@ export default {
           throw Error(`Field "${field}" cannot be left blank.`);
       });
 
-      return {
+      const params = {
         name: this.name,
         breed: this.breed,
         size: this.size,
         birthDate: this.birthDate,
         temperament: this.temperament,
         tutorId: getCurrentUser().id,
+        image: this.imageData,
       };
+
+      return params;
     },
 
     async createDog(dog) {
