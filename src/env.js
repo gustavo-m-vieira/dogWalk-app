@@ -4,6 +4,7 @@ export default {
     createUser: "/api/users",
     login: "/api/generate-token",
     createDog: "/api/dogs",
+    getDogs: "/api/dogs",
     createTrip: (props) => `/api/users/${props.userId}/trips`,
   },
 };
