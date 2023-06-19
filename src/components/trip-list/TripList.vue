@@ -42,11 +42,13 @@
   </dialog>
 
   <ul class="trip-list">
-    <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.walker">
+    <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.id">
       <h1 class="text-main trip-box-title">2:12AM trip by Carlos</h1>
-
+      <button class="material-symbols-outlined delete-trip" v-if="trip.walkerId === userId"> delete </button>
+      
       <ul class="slot-list" >
-        <li class="trip-slot filled-slot" v-on:click="selectDogModal(trip.walker)" v-for="dog in trip.dogs" v-bind:key="dog.id"></li>
+        <li class="trip-slot filled-slot" v-on:click="selectDogModal(trip.walker)" v-for="dog in trip.dogs" v-bind:key="dog.id">
+        </li>
         <li class="trip-slot" 
           v-on:click="selectDogModal(trip.walker)" 
           v-for="slot in Array(trip.slots - trip.dogs.length).keys()" 
@@ -65,6 +67,27 @@
 </template>
 
 <style>
+.delete-trip {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 0 !important;
+  transform: translate(-20%, -50%);
+  text-align: center;
+  font-size: 140% !important;
+  padding: 1.5vw;
+  box-sizing: content-box;
+}
+
+.delete-dog {
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translate(-0%, -50%);
+  font-size: 100% !important;
+  padding-inline: 4px;
+}
+
 #select-a-dog {
   position: absolute;
   top: 50%;
@@ -109,7 +132,8 @@
 }
 
 .filled-slot {
-  background: red;
+  background-image: url("https://cdn4.vectorstock.com/i/1000x1000/33/03/akita-head-dog-profile-vector-24973303.jpg");
+  background-size: cover;
 }
 
 .add-trip {
