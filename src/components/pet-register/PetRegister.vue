@@ -52,6 +52,11 @@
         </select>
       </div>
 
+      <div>
+        <input type="file" @change="handleFileChange" />
+        <img :src="imagemUrl" alt="Imagem PNG" />
+      </div>
+
       <button class="button text-main" v-on:click="clicked">
         <span class="material-symbols-outlined spinning" v-if="loading"
           >cached</span
