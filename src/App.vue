@@ -3,16 +3,21 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
-  
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap"
+    rel="stylesheet"
+  />
+
   <div id="app-structure" class="background">
-    <RouterView/>
+    <RouterView />
     <NavBar></NavBar>
   </div>
-
 </template>
 
 <style>
@@ -65,6 +70,16 @@ import { RouterView } from "vue-router";
 
 .input-label {
   font-size: 140%;
+}
+
+.input-field {
+  margin-inline: 2vw;
+  margin-bottom: 2vh;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .spinning {

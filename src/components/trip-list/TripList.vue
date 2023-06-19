@@ -22,39 +22,59 @@
       v-model="date"
       type="date"
     />
+    <label></label>
+    <button
+      class="material-symbols-outlined filter-button"
+      v-on:click="searchTrips"
+    >
+      search
+    </button>
   </div>
 
   <dialog id="select-a-dog">
-    <form>
+    <form @submit="addDogToTrip">
       <p>
         <label>
           Who is taking a trip today?
           <select v-model="selectedDog" class="dog-selector">
-            <option v-for="dog in dogs" v-bind:key="dog.id">{{ dog.name }}</option>
+            <option v-for="dog in dogs" v-bind:key="dog.id">
+              {{ dog.name }}
+            </option>
           </select>
         </label>
       </p>
       <div class="modal-list">
-        <button >Cancel</button>
-        <button >Confirm</button>
+        <button>Cancel</button>
+        <button type="submit">Confirm</button>
       </div>
     </form>
   </dialog>
 
   <ul class="trip-list">
     <li class="trip-box glass" v-for="trip in trips" v-bind:key="trip.id">
-      <h1 class="text-main trip-box-title">2:12AM trip by Carlos</h1>
-      <button class="material-symbols-outlined delete-trip" v-if="trip.walkerId === userId"> delete </button>
-      
-      <ul class="slot-list" >
-        <li class="trip-slot filled-slot" v-on:click="selectDogModal(trip.walker)" v-for="dog in trip.dogs" v-bind:key="dog.id">
-        </li>
-        <li class="trip-slot" 
-          v-on:click="selectDogModal(trip.walker)" 
-          v-for="slot in Array(trip.slots - trip.dogs.length).keys()" 
-          v-bind:key="slot"
-        ></li>
-      </ul>
+      <h1 class="text-main trip-box-title">{{ trip.header }}</h1>
+      <div class="slots-delete-box">
+        <ul class="slot-list">
+          <li
+            class="trip-slot filled-slot"
+            v-for="dog in trip.dogs"
+            v-bind:key="dog.id"
+          ></li>
+          <li
+            class="trip-slot"
+            v-on:click="selectDogModal(trip)"
+            v-for="slot in Array(trip.slots - trip.dogs.length).keys()"
+            v-bind:key="slot"
+          ></li>
+        </ul>
+
+        <button
+          class="material-symbols-outlined delete-trip"
+          v-if="trip.walkerId === userId"
+        >
+          delete
+        </button>
+      </div>
     </li>
     <RouterLink
       class="material-symbols-outlined add-trip"
@@ -68,15 +88,13 @@
 
 <style>
 .delete-trip {
-  position: fixed;
-  right: 0;
-  top: 0;
-  margin: 0 !important;
-  transform: translate(-20%, -50%);
   text-align: center;
   font-size: 140% !important;
   padding: 1.5vw;
   box-sizing: content-box;
+  width: 10vh;
+  height: 10vh;
+  margin: 1vh;
 }
 
 .delete-dog {
@@ -117,7 +135,7 @@
   width: 95%;
   display: flex;
   flex-direction: row;
-  overflow: scroll;
+  overflow-x: auto;
   align-items: center;
   justify-content: start;
   padding: 0;
@@ -126,7 +144,7 @@
 .trip-slot {
   height: 10vh;
   width: 10vh;
-  background: var(--white);
+  background: #639fca;
   margin: 1vh;
   border-radius: 10%;
 }
@@ -176,8 +194,8 @@
   border-radius: 0;
   display: grid;
   grid-template:
-    "AL BL"
-    "A B";
+    "AL BL CL"
+    "A B C";
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -187,9 +205,27 @@
 .input-field {
   margin-inline: 2vw;
   margin-bottom: 2vh;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .input-label {
   padding-inline: 2vw;
+}
+
+.filter-button {
+  margin-top: 0;
+  align-self: flex-start;
+}
+
+.slots-delete-box {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
 }
 </style>
